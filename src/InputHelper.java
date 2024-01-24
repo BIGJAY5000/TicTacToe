@@ -123,7 +123,7 @@ public class InputHelper {
         } while (!done);
         return input;
     }
-    public static boolean getYNConfirm(Scanner in, String prompt){
+    public static boolean getYNConfirm(Scanner in, String prompt) {
         boolean done = false;
         String YN;
         do {
@@ -132,16 +132,14 @@ public class InputHelper {
             YN = YN.toUpperCase();
             if (YN.equals("N") || YN.equals("Y")) {
                 done = true;
-            }
-            else {
-                System.out.println("You have entered an invalid input");
+            } else {
+                System.out.println("Error: Invalid");
             }
         } while (!done);
         if (YN.equals("N")) {
-            return false;
-        }
-        else {
             return true;
+        } else {
+            return false;
         }
     }
     public static String getNonZeroLenString (Scanner in, String prompt){
@@ -150,7 +148,7 @@ public class InputHelper {
         System.out.println(prompt);
         do {
             input = in.nextLine();
-            if (input.length() > 0 && in.hasNextLine()) {
+            if (input.length() > 0) {
                 done = true;
             }
             else {
